@@ -65,9 +65,8 @@ One of the challenges with internationalization is knowing which locale a user a
 ```ruby
 LocaleSetter.configure do |config|
   config.url_param           = :locale
-  config.user_locale_method  = :locale
+  config.cookie_key          = :locale
   config.localized_domains   = {}
-  config.current_user_method = :current_user
 end
 ```
 

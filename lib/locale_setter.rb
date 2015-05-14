@@ -12,8 +12,7 @@ require "locale_setter/generic"
 module LocaleSetter
   HTTP_HEADER = 'HTTP_ACCEPT_LANGUAGE'
   URL_PARAM   = :locale
-  USER_METHOD = :locale
-  CURRENT_USER_METHOD = :current_user
+  COOKIE_KEY  = :locale
 
   class << self
     attr_accessor :configuration
@@ -31,9 +30,8 @@ module LocaleSetter
     def default_params
       {
         :url_param => URL_PARAM,
-        :user_locale_method => USER_METHOD,
-        :localized_domains => {},
-        :current_user_method => CURRENT_USER_METHOD
+        :cookie_key => COOKIE_KEY,
+        :localized_domains => {}
       }
     end
   end

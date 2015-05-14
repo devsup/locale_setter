@@ -20,9 +20,8 @@ describe LocaleSetter do
 
     it "initializes config with default values" do
       expect(described_class.config.url_param).to eq(described_class::URL_PARAM)
-      expect(described_class.config.user_locale_method).to eq(described_class::USER_METHOD)
+      expect(described_class.config.cookie_key).to eq(described_class::COOKIE_KEY)
       expect(described_class.config.localized_domains).to eq({})
-      expect(described_class.config.current_user_method).to eq(described_class::CURRENT_USER_METHOD)
     end
   end
 end

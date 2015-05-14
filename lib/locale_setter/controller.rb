@@ -23,8 +23,8 @@ module LocaleSetter
     end
 
     def locale_user
-      current_user_method = LocaleSetter.config.current_user_method.to_sym
-      send(current_user_method) if respond_to?(current_user_method)
+      cookie_key = LocaleSetter.config.cookie_key.to_sym
+      cookies[cookie_key]
     end
 
     def i18n
