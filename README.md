@@ -188,7 +188,7 @@ This library is considered "experimental" quality. Your feedback would be very w
 
 ### Test Application / Example Usage
 
-Check out https://github.com/jcasimir/locale_setter_test for a simple Rails application used to black-box test the library in real usage.
+Check out https://github.com/devsup/locale_setter_test for a simple Rails application used to black-box test the library in real usage.
 
 ## License
 

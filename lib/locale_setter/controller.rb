@@ -5,8 +5,8 @@ module LocaleSetter
     end
 
     def default_url_options(options = {})
-      if i18n.locale != i18n.default_locale && params[LocaleSetter.config.url_param]
-        {LocaleSetter.config.url_param => i18n.locale}.merge(options)
+      if I18n.locale != I18n.default_locale && params[LocaleSetter.config.url_param]
+        {LocaleSetter.config.url_param => I18n.locale}.merge(options)
       else
         options
       end
@@ -14,21 +14,13 @@ module LocaleSetter
 
     def set_locale
       Generic.set_locale(
-        i18n,
-        {:params => params,
-         :user   => locale_user,
-         :domain => request.host,
-         :env    => request.env}
+        I18n,
+        {:params  => params,
+         :cookies => cookies,
+         :domain  => request.host,
+         :env     => request.env}
       )
-    end
-
-    def locale_user
-      cookie_key = LocaleSetter.config.cookie_key.to_sym
-      cookies[cookie_key]
-    end
-
-    def i18n
-      I18n
+      logger.debug "==== #{I18n.locale}"
     end
   end
 end
