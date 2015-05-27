@@ -40,7 +40,7 @@ module LocaleSetter
       params = @options[:params] 
       if params && params[LocaleSetter.config.url_param]
         locale_from_params = LocaleSetter::Param.for(params[LocaleSetter.config.url_param], available)
-        @options[:cookies][LocaleSetter.config.cookie_key.to_sym] = locale_from_params
+        @options[:cookies].permanent[LocaleSetter.config.cookie_key.to_sym] = locale_from_params
       end
     end
   end
